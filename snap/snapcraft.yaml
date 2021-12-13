@@ -11,24 +11,21 @@ description: |
 
   The easiest way to play is to click and drag with the mouse, but there are also some keyboard bindings:
 
-  Up - Moves selector up
-  Down - Moves selector down
-  Left - Moves selector left
-  Right - Moves selector right
-
-  E -(Hold) to Shift tiles + Release Ball
-  R - Switch between selector control of: Bonus Menu, Tile Grid, Release System
-
-  Q - Add a ball to random release on demand.
-  Enter - Release Ball / Use
-  Escape / Right Click - Menu
-
-  F1 - Use Bonus in Slot 1
-  F2 - Use Bonus in Slot 2
-  F3 - Use Bonus in Slot 3
-  F4 - Use Bonus in Slot 4
-  F5 - Use Bonus in Slot 5
-  F6 - Use Bonus in Slot 6
+  * Up: Moves selector up
+  * Down: Moves selector down
+  * Left: Moves selector left
+  * Right: Moves selector right
+  * E: (Hold) to Shift tiles + Release Ball
+  * R: Switch between selector control of: Bonus Menu, Tile Grid, Release System
+  * Q: Add a ball to random release on demand.
+  * Enter: Release Ball / Use
+  * Escape: Right Click - Menu
+  * F1: Use Bonus in Slot 1
+  * F2: Use Bonus in Slot 2
+  * F3: Use Bonus in Slot 3
+  * F4: Use Bonus in Slot 4
+  * F5: Use Bonus in Slot 5
+  * F6: Use Bonus in Slot 6
 
 grade: stable
 icon: snap/gui/trax.png
