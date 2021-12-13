@@ -1,0 +1,80 @@
+name: trax
+title: Trax Puzzle
+version: "1.0"
+summary: Mushroom Roulette is a level based 2D top-down puzzle game.
+description: |
+  Use the CD-KEY: dn28ak45eew2
+
+  Themed around telling the story of the Nagasaki and Hiroshima incidents, sorry if you find this a tad controversial or lacking tact I am literally autistic and did not know better at the time of making this game in the years of 2007-2008.
+
+  "Trax is a Language Independent Story Telling Puzzle Game (LIST-PG). Trax combines Pipe Tiles with Slide-Puzzle manipulation to guide power balls to their respective goals. Trax is a game that will improve your cognitive and problem solving skills."
+
+  The easiest way to play is to click and drag with the mouse, but there are also some keyboard bindings:
+
+  Up - Moves selector up
+  Down - Moves selector down
+  Left - Moves selector left
+  Right - Moves selector right
+
+  E -(Hold) to Shift tiles + Release Ball
+  R - Switch between selector control of: Bonus Menu, Tile Grid, Release System
+
+  Q - Add a ball to random release on demand.
+  Enter - Release Ball / Use
+  Escape / Right Click - Menu
+
+  F1 - Use Bonus in Slot 1
+  F2 - Use Bonus in Slot 2
+  F3 - Use Bonus in Slot 3
+  F4 - Use Bonus in Slot 4
+  F5 - Use Bonus in Slot 5
+  F6 - Use Bonus in Slot 6
+
+grade: stable
+icon: snap/gui/trax.png
+
+base: core18
+confinement: strict
+
+architectures:
+  - build-on: amd64
+  - build-on: i386
+
+environment:
+  WINEDLLOVERRIDES: "$WINEDLLOVERRIDES;mscoree,mshtml="    # Prevent pop-ups about Wine Mono and Wine Gecko
+
+apps:
+  trax:
+    extensions: [ gnome-3-28 ]
+    command: bin/sommelier run-exe
+    environment:
+      RUN_EXE: "C:/Program Files (x86)/Trax - Atomic Day - Hiroshima/Trax Gold.exe"
+      INSTALL_EXE: "$SNAP/TraxAtomicDay-dn28ak45eew2.exe"
+  wine:
+    extensions: [ gnome-3-28 ]
+    command: bin/sommelier run-exe
+  winetricks:
+    extensions: [ gnome-3-28 ]
+    command: bin/sommelier run-exe
+
+parts:
+  installer:
+    plugin: dump
+    source: installer
+
+  # The sommelier script helps you snap Windows applications using Wine. It 
+  # initializes and configures Wine and installs the Windows application.
+  sommelier:
+    plugin: make
+    source: https://github.com/snapcrafters/sommelier-core.git
+
+# These plugs are used to connect the snap to the wine runtime.
+plugs:
+  wine-runtime:
+    interface: content
+    target: $SNAP/wine-runtime
+    default-provider: wine-platform-runtime
+  wine-5-stable:
+    interface: content
+    target: $SNAP/wine-platform
+    default-provider: wine-platform-5-stable

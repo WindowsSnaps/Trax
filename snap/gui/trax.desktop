@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Trax
+Exec=trax
+Icon=${SNAP}/meta/gui/trax.png
+Terminal=false
+StartupNotify=true
+StartupWMClass=Trax Gold.exe
+Type=Application
+Categories=Application;Game;ArcadeGame;
